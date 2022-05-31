@@ -9,6 +9,6 @@
 
 </br>
 </div>
-![speech to text](https://user-images.githubusercontent.com/85294225/171233722-3ecc3ebd-ca50-4620-bf90-8a7daa7d69ef.png)
+![speech to text](https://user-images.githubusercontent.com/85294225/171233722-3ecc3ebd-ca50-4620-bf90-8a7daa7d69ef.png?itok=XH4x7-Y4)
 
 </br>
