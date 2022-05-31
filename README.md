@@ -13,8 +13,6 @@
 - [Not Completed]
 ## Data visualization link
 - [Not Completed]
-
 ## Articles
 - [Not Completed]
-
 ## Table of Contents
