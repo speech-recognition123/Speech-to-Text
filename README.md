@@ -6,9 +6,15 @@
 <a href="https://github.com/week4-SpeechRecognition/Speech-to-Text/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/week4-SpeechRecognition/Speech-to-Text?color=2b9348"></a>
 <a href="https://github.com/week4-SpeechRecognition/Speech-to-Text/blob/main/LICENCE"><img src="https://img.shields.io/github/license/week4-SpeechRecognition/Speech-to-Text?color=2b9348" alt="License Badge"/></a>
 </div>
-<br>
+</br>
+
 ## Presentation Slide
+
 - [Speech to Text: Not Completed]
+
+
+- [Rossmann Pharmaceutical Sales prediction](https://www.canva.com/design/DAFBtdnLoKQ/hxJHGTgvoTwJMX9hXbbGVA/view?utm_content=DAFBtdnLoKQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
 
 ## Data visualization link
 - [visualization link: Not Completed]
@@ -92,5 +98,7 @@
 ## Installation guide
 
 ```bash
+
 not yet
 ```
+
