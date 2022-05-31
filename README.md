@@ -9,6 +9,7 @@
 
 </br>
 </div>
-![speech to text](https://user-images.githubusercontent.com/85294225/171233722-3ecc3ebd-ca50-4620-bf90-8a7daa7d69ef.png?itok=XH4x7-Y4)
+![speech to text](https://user-images.githubusercontent.com/85294225/171234146-f214ce66-f968-489b-a3e7-7536f1621c25.png)
+
 
 </br>
