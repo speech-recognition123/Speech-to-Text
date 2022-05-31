@@ -9,7 +9,7 @@
 
 </br>
 </div>
-![speech to text](https://user-images.githubusercontent.com/85294225/171234146-f214ce66-f968-489b-a3e7-7536f1621c25.png)
+![speech to text]([https://user-images.githubusercontent.com/85294225/171234146-f214ce66-f968-489b-a3e7-7536f1621c25.png?raw=true]
 
 
 </br>
