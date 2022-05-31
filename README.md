@@ -7,13 +7,8 @@
 <a href="https://github.com/week4-SpeechRecognition/Speech-to-Text/blob/main/LICENCE"><img src="https://img.shields.io/github/license/week4-SpeechRecognition/Speech-to-Text?color=2b9348" alt="License Badge"/></a>
 </div>
 </br>
-</div>
-</br>
-## Presentation Slide
-- [Not Yet]
+## Presentation Slid 
 ## Data visualization link
-- [Not Yet]
-## Articles
-- [Not Yet]
+## Articles 
 ## Table of Contents
 ​
