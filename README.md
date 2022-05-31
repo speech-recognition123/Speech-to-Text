@@ -12,10 +12,6 @@
 
 - [Speech to Text: Not Completed]
 
-
-- [Rossmann Pharmaceutical Sales prediction](https://www.canva.com/design/DAFBtdnLoKQ/hxJHGTgvoTwJMX9hXbbGVA/view?utm_content=DAFBtdnLoKQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
-
-
 ## Data visualization link
 - [visualization link: Not Completed]
 
@@ -24,7 +20,7 @@
 
 ## Table of Contents
 
-* [African language Speech Recognition](#African language Speech Recognition)
+* [African language Speech Recognition](#African-language-Speech-Recognition)
 
   - [Introduction](##Introduction)
   - [Project Structure](#project-structure)
