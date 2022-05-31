@@ -1,26 +1,32 @@
-name: unit-tests
+name: model-pipeline
 on:
   push:
     branches:
       - main
 jobs:
-  Explore-GitHub-Actions:
+  run:
     runs-on: ubuntu-latest
+    # optionally use a convenient Ubuntu LTS + DVC + CML image
+    # container: docker://ghcr.io/iterative/cml:0-dvc2-base1
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - name: Check out repository code
-        uses: actions/checkout@v3
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
+      - uses: actions/checkout@v2
+      # may need to setup NodeJS & Python3 on e.g. self-hosted
+      # - uses: actions/setup-node@v2
+      #   with:
+      #     node-version: '16'
+      # - uses: actions/setup-python@v2
+      #   with:
+      #     python-version: '3.x'
+      - uses: iterative/setup-cml@v1
+      - name: Train model
         run: |
-          ls ${{ github.workspace }}
-      - name: Install requirements
-        run: pip install -r requirements.txt
-      # TODO: test go here.
-      - name: Run
-        run: python -m unittest tests.test_data_preProcessing
-      # TODO: test end here.
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+          # Your ML workflow goes here
+          sudo pip install -r requirements.txt
+          sudo python train.py
+      - name: Write CML report
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Post reports as comments in GitHub PRs
+          cat results.txt >> report.md
+          cml send-comment report.md
