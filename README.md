@@ -24,8 +24,7 @@
 
 ## Table of Contents
 
-* [African language Speech Recognition](#African language Speech Recognition)
-
+* [African language Speech Recognition](#African-language-Speech-Recognition)
   - [Introduction](#Introduction)
   - [Project Structure](#project-structure)
     * [data](#data)
