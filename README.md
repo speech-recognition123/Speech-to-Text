@@ -10,9 +10,10 @@
 </div>
 </br>
 ## Presentation Slide
-- [Not Completed]
+- [Not Yet]
 ## Data visualization link
-- [Not Completed]
+- [Not Yet]
 ## Articles
-- [Not Completed]
+- [Not Yet]
 ## Table of Contents
+​
