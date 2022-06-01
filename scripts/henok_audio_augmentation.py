@@ -32,3 +32,9 @@ class AugmentAudio:
             augmented_data[shift:] = 0
 
         return augmented_data
+    
+    def change_pitch(self, data, sampling_rate, pitch_factor):
+        return librosa.effects.pitch_shift(data, sampling_rate, pitch_factor)
+
+    def change_speed(self, data, speed_factor):
+        return librosa.effects.time_stretch(data, speed_factor)
