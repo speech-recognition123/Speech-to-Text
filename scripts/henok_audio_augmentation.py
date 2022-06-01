@@ -21,7 +21,7 @@ class AugmentAudio:
         shift = np.random.randint(sampling_rate * shift_max)
         if shift_direction == 'right':
             shift = -shift
-        elif self.shift_direction == 'both':
+        elif shift_direction == 'both':
             direction = np.random.randint(0, 2)
             if direction == 1:
                 shift = -shift
