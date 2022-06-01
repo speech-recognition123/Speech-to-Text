@@ -13,7 +13,7 @@ class AudioCleaner:
         my_logger = App_Logger("../logs/henok_audio_cleaner.log")
         self.logger = my_logger.get_app_logger()
 
-    def resize_audio(self, audio: np.Array, size: int) -> np.Array:
+    def resize_audio(self, audio: np.Array, size: int) -> np.array:
         """
         This resizes all input audio to a fixed sample size.
         It helps us to have a consistent data shape
