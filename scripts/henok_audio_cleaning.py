@@ -17,9 +17,17 @@ class AudioCleaner:
         """
         This resizes all input audio to a fixed sample size.
         It helps us to have a consistent data shape
+
+        Args:
+            audio: This is the audio sample as a numpy array
         """
         resized = librosa.utils.fix_length(audio, size, axis=1)
         self.logger.info(f"Audio resized to {size} samples")
         return resized
 
-    # def convert_to_sterio(self, audio: np.Array) -> np.Array:
+    def convert_to_sterio(self, audio: np.Array) -> np.Array:
+        if len(audio.shape) == 1:
+            sterio = np.stack([audio, audio], axis=1)
+
+            return sterio
+        return audio
