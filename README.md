@@ -50,48 +50,48 @@
 
 ## Project Structure
 
-### images:
+### [images](images):
 
 - `images/` the folder where all snapshot for the project are stored.
 
-### logs:
+### [logs](logs):
 
 - `logs/` the folder where script logs are stored.
 
-### mlruns:
+### [mlruns](mlruns):
 - `mlruns/0/` the folder that contain auto generated mlflow runs.
-### data:
+### [data](data):
 
  - `not yet.dvc` the folder where the dataset versioned csv files are stored.
 
-### .dvc:
+### [.dvc](.dvc):
 - `.dvc/`: the folder where dvc is configured for data version control.
 
-### .github:
+### [.github](.github):
 
 - `.github/`: the folder where github actions and CML workflow is integrated.
 
-### .vscode:
+### [.vscode](.vscode):
 
 - `.vscode/`: the folder where local path fix are stored.
-### modles:
+### [models](models):
 - `not yet.pkl`: the folder where model pickle files are stored.
 
-### notebooks:
+### [notebooks](notebooks):
 
 - `not yet.ipynb`: description will be added.
 - `not yet.ipynb`: description will be added.
 
 
-###  scripts:
+###  [scripts](scripts):
 
 - ` not yet.py`: description will be added.
 
-### tests:
+### [tests](tests):
 
 - `tests/`: the folder containing unit tests for the scripts.
 
-### sql:
+### [sql](sql):
 
 - `sql/`: the folder containing database table and mysql-python manipulator script.
 ### root folder
