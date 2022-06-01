@@ -44,7 +44,7 @@
 
 ## architecture
 
-- `images/` the folder where all snapshot for the project are stored.
+![speech-to-text deep learning architecture](images/Speech-to-Text-Architecture.JPG)
 
 ## Project Structure
 
