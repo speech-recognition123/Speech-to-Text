@@ -42,9 +42,11 @@
 
 <p>Our responsibility was to build a deep learning model that is capable of transcribing a speech to text in the Amharic language. The model we produce will be accurate and is robust against background noise.</p>
 
+
 ## architecture
 
 ![speech-to-text deep learning architecture](images/Speech-to-Text-Architecture.JPG)
+
 
 ## Project Structure
 
