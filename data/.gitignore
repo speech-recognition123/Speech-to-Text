@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 test/
 train/
 lexicon.txt
+=======
+/lexicon.txt
+/test
+/train
+>>>>>>> 8758ef8b970ec7ef765af3f0a622f8d00eb6011c
