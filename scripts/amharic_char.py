@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Wed Aug  4 22:59:13 2021
-
-@author: Smegn
-"""
 
 supported = """
 ሀ ሁ ሂ ሄ ህ ሆ
