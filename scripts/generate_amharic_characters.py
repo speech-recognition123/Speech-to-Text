@@ -24,7 +24,7 @@ class GenerateCharacters:
                 md = json.load(f)
                 self.df = pd.DataFrame(md)
         elif self.md_path.endswith('.csv'):
-          self.df = pd.read_csv(self.dataset_metadata_path)
+          self.df = pd.read_csv(self.md_path)
         # print(self.df['text'].values)
         for ele in self.df['text'].values:
             yield ele
