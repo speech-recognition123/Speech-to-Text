@@ -1,2 +1,4 @@
 [core]
     autostage = true
+['remote "dvc_remote"']
+    url = gdrive://1sz0OwI60-l0Mli9InwIlzrXgkPyKZupm
