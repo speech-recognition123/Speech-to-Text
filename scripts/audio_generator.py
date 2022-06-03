@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 import random
 import json
-import scipy.io.wavfile as wav 
+import scipy.io.wavfile as wav
 from python_speech_features import mfcc
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 
@@ -20,10 +20,26 @@ def make_audio_gen(train_json,
                    spectrogram=True,
                    mfcc_dim=13,
                    sort_by_duration=False,
-                   max_duration=10.0):
+                   max_duration=10.0,
+                   char_map={}):
     return AudioGenerator(train_json, valid_json, minibatch_size=minibatch_size,
                           spectrogram=spectrogram, mfcc_dim=mfcc_dim, max_duration=max_duration,
-                          sort_by_duration=sort_by_duration)
+                          sort_by_duration=sort_by_duration,
+                          char_map=char_map)
+
+
+def text_to_int_sequence(text, char_map):
+    """ Convert text to an integer sequence """
+    int_sequence = []
+    for c in text:
+        if c == ' ':
+            ch = char_map['<SPACE>']
+        else:
+            # print("checking character " + c + " in map:")
+            # print(char_map)
+            ch = char_map[c]
+        int_sequence.append(ch)
+    return int_sequence
 
 
 def calc_feat_dim(window, max_freq):
@@ -33,7 +49,7 @@ def calc_feat_dim(window, max_freq):
 class AudioGenerator():
     def __init__(self, train_corpus, valid_corpus, step=10, window=20, max_freq=8000, mfcc_dim=13,
                  minibatch_size=20, desc_file=None, spectrogram=True, max_duration=10.0,
-                 sort_by_duration=False):
+                 sort_by_duration=False, char_map=None):
         """
         Params:
             step (int): Step size in milliseconds between windows (for spectrogram ONLY)
@@ -63,6 +79,7 @@ class AudioGenerator():
         self.minibatch_size = minibatch_size
         self.spectrogram = spectrogram
         self.sort_by_duration = sort_by_duration
+        self.char_map = char_map
 
     def get_batch(self, partition):
         """ Obtain a batch of train, validation, or test data
@@ -106,7 +123,7 @@ class AudioGenerator():
             X_data[i, :feat.shape[0], :] = feat
 
             # calculate labels & label_length
-            label = np.array(text_to_int_sequence(texts[cur_index+i]))
+            label = np.array(text_to_int_sequence(texts[cur_index+i], self.char_map))
             labels[i, :len(label)] = label
             label_length[i] = len(label)
 

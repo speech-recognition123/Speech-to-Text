@@ -9,6 +9,8 @@ from keras.optimizers import gradient_descent_v2
 from keras.layers import (Input, Lambda)
 
 from keras.callbacks import ModelCheckpoint   
+import os
+
 
 def model_1(input_dim, units, activation, output_dim=29):
     """ Build a recurrent network for speech 
@@ -91,15 +93,3 @@ def train(audio_gen,
 
 
 
-def text_to_int_sequence(text):
-    """ Convert text to an integer sequence """
-    int_sequence = []
-    for c in text:
-        if c == ' ':
-            ch = char_map['<SPACE>']
-        else:
-            # print("checking character " + c + " in map:")
-            # print(char_map)
-            ch = char_map[c]
-        int_sequence.append(ch)
-    return int_sequence
