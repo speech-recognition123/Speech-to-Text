@@ -10,7 +10,7 @@ from keras.layers import (Input, Lambda)
 
 from keras.callbacks import ModelCheckpoint   
 import os
-
+import pickle
 
 def model_1(input_dim, units, activation, output_dim=29):
     """ Build a recurrent network for speech 

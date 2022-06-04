@@ -47,9 +47,20 @@ def calc_feat_dim(window, max_freq):
 
 
 class AudioGenerator():
-    def __init__(self, train_corpus, valid_corpus, step=10, window=20, max_freq=8000, mfcc_dim=13,
-                 minibatch_size=20, desc_file=None, spectrogram=True, max_duration=10.0,
-                 sort_by_duration=False, char_map=None):
+    def __init__(self,
+                 train_corpus,
+                 valid_corpus,
+                 step=10,
+                 window=20,
+                 max_freq=8000,
+                 mfcc_dim=13,
+                 minibatch_size=20,
+                 desc_file=None,
+                 spectrogram=True,
+                 max_duration=10.0,
+                 sort_by_duration=False,
+                 char_map=None
+                 ):
         """
         Params:
             step (int): Step size in milliseconds between windows (for spectrogram ONLY)
@@ -123,7 +134,8 @@ class AudioGenerator():
             X_data[i, :feat.shape[0], :] = feat
 
             # calculate labels & label_length
-            label = np.array(text_to_int_sequence(texts[cur_index+i], self.char_map))
+            label = np.array(text_to_int_sequence(
+                texts[cur_index+i], self.char_map))
             labels[i, :len(label)] = label
             label_length[i] = len(label)
 
