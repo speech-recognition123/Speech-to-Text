@@ -1,3 +1,4 @@
+from log_help import App_Logger
 import os
 import sys
 
@@ -9,11 +10,12 @@ import pandas as pd
 from librosa.core import audio
 from numpy.lib.stride_tricks import as_strided
 from scipy.io import wavfile  # for audio processing
-
+from os.path import exists
+import wave
+import array
 sys.path.insert(0, "../logs/")
 sys.path.append(os.path.abspath(os.path.join("..")))
 
-from log_helper import App_Logger
 
 app_logger = App_Logger("../logs/audio_loader.log").get_app_logger()
 
@@ -108,7 +110,7 @@ class AudioLoader:
 
         # window stride sanity check
         assert np.all(
-            x[:, 1] == samples[hop_length : (hop_length + fft_length)]
+            x[:, 1] == samples[hop_length: (hop_length + fft_length)]
         )
 
         # broadcast window, compute fft over columns and square mod
@@ -122,3 +124,84 @@ class AudioLoader:
         freqs = float(sample_rate) / fft_length * np.arange(x.shape[0])
 
         return x, freqs
+
+    def change_channel_to_stereo(self, file1, output):
+        try:
+            ifile = wave.open(file1)
+            print(ifile.getparams())
+            # (1, 2, 44100, 2013900, 'NONE', 'not compressed')
+            (nchannels, sampwidth, framerate, nframes,
+             comptype, compname) = ifile.getparams()
+            assert comptype == 'NONE'  # Compressed not supported yet
+            array_type = {1: 'B', 2: 'h', 4: 'l'}[sampwidth]
+            left_channel = array.array(array_type, ifile.readframes(nframes))[
+                ::nchannels]
+            ifile.close()
+
+            stereo = 2 * left_channel
+            stereo[0::2] = stereo[1::2] = left_channel
+
+            ofile = wave.open(output, 'w')
+            ofile.setparams(
+                (2, sampwidth, framerate, nframes, comptype, compname))
+            print(ofile.getnchannels())
+            ofile.writeframes(stereo.tobytes())
+            ofile.close()
+            self.logger.info(
+                f"Successfully changed channel to stereo for audio : {file1}")
+            return ofile.getnchannels()
+
+        except Exception as e:
+            print(e)
+
+    def resize_audio(self, audio: np.array, size: int) -> np.array:
+        """
+        This resizes all input audio to a fixed sample size.
+        It helps us to have a consistent data shape
+
+        Args:
+            audio: This is the audio sample as a numpy array
+        """
+        resized = librosa.util.fix_length(audio, size, axis=1)
+        print(f"Audio resized to {size} samples")
+        return resized
+
+    def meta_data(self, trans, path):
+        target = []
+        features = []
+        mode = []
+        rmse = []
+        spec_cent = []
+        spec_bw = []
+        rolloff = []
+        zcr = []
+        mfcc = []
+        rate = []
+        filenames = []
+        duration_of_recordings = []
+        for index, k in enumerate(trans):
+            if index < 5:
+                filename = path + k + ".wav"
+                next_file_name = path + k + "changed.wav"
+                if exists(filename):
+                    # stereo = change_channel_to_stereo(filename, next_file_name)
+                    filenames.append(filename)
+                    audio, fs = librosa.load(filename, sr=44100)
+                    chroma_stft = librosa.feature.chroma_stft(y=audio, sr=fs)
+                    rmse.append(np.mean(librosa.feature.rms(y=audio)))
+                    spec_cent.append(
+                        np.mean(librosa.feature.spectral_centroid(y=audio, sr=fs)))
+                    spec_bw.append(
+                        np.mean(librosa.feature.spectral_bandwidth(y=audio, sr=fs)))
+                    rolloff.append(
+                        np.mean(librosa.feature.spectral_rolloff(y=audio, sr=fs)))
+                    zcr.append(
+                        np.mean(librosa.feature.zero_crossing_rate(audio)))
+                    mfcc.append(np.mean(librosa.feature.mfcc(y=audio, sr=fs)))
+                    duration_of_recordings.append(float(len(audio)/fs))
+                    rate.append(fs)
+                    mode.append('mono')  # if stereo == 1 else 'stereo')
+                    lable = trans[k]
+                    target.append(lable)
+        self.logger.info(f"Meta Data Generated For {len(filenames)} Audios")
+        return filenames, target, duration_of_recordings, mode, rmse, spec_cent, spec_bw, rolloff, zcr, mfcc, rate
