@@ -49,6 +49,19 @@ feature_schema = FeatureSchema()
 #Route to handle the prediction
 @app.route("/predict", methods=['POST'])
 def predict():
+    #Filtering details from received json file and processing
+    path = request.json['path']
+    text = request.json['text']
+    duration = request.json['duration']
+
+    new_file = Features(path,text, duration)
+    db.session.add(new_file)
+    db.session.commit()
+
+    file = {"path": path,
+            "text": text,
+            "duration": duration}
+
     pwd = os.getcwd()
     rnn_model_path = os.path.join(pwd, "model/RNN_model.pickle")
     rnn_model = load(open(rnn_model_path, "rb"))
