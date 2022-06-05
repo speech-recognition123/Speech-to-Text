@@ -11,6 +11,36 @@ import os
 #Initialize App
 app = Flask(__name__)
 
+base_dir = os.path.dirname(__file__)
+
+#Database
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///'+os.path.join(base_dir, 'db.sqlite')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+#Init DB
+db = SQLAlchemy(app)
+
+#Init Marshmallow
+ma = Marshmallow(app)
+
+# Creating the features db
+class Features(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    path = db.Column(db.String(200))
+    text = db.Column(db.String(1000))
+    duration = db.Column(db.String(250))
+
+    def __init__(self, path,text, duration):
+        self.path = path
+        self.text = text
+        self.duration = duration
+
+#Create the database schema
+class FeatureSchema(ma.Schema):
+    class Meta:
+        fields = ['id', 'path', 'text', 'duration']
+
+
 #Route to handle the prediction
 @app.route("/predict", methods=['POST'])
 def predict():
