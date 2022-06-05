@@ -35,16 +35,20 @@ class Features(db.Model):
         self.text = text
         self.duration = duration
 
+
 #Create the database schema
 class FeatureSchema(ma.Schema):
     class Meta:
         fields = ['id', 'path', 'text', 'duration']
 
+#Init Schema
+feature_schema = FeatureSchema()
+# products_schema = ProductSchema(many=True,)
+
 
 #Route to handle the prediction
 @app.route("/predict", methods=['POST'])
 def predict():
-    file = request.files["file"]
     pwd = os.getcwd()
     rnn_model_path = os.path.join(pwd, "model/RNN_model.pickle")
     rnn_model = load(open(rnn_model_path, "rb"))
