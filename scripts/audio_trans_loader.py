@@ -58,6 +58,23 @@ class AudioLoader:
                 name_to_text[name] = text
                 self.logger.info(f"Training data loaded: {name}")
         return name_to_text
+    def loaderTransSwahili(self, filename: str):
+        """
+        # Loads the audio file and returns the audio data and sample rate
+        # @param filename: The path to the audio file
+        # @return: The audio data and sample rate
+        #
+        """
+        name_to_text = {}
+        with open (filename, encoding="utf-8")as f:
+            f.readline()
+            for line in f:
+                name=line.split("\t")[0]
+                text=line.split("\t")[1]
+                text=text.replace('\n','')
+                name_to_text[name]=text
+        self.logger.info(f"Training data loaded: {name}")
+        return name_to_text
 
     def duration_target(self, trans, path: str):
         """
