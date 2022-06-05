@@ -1,0 +1,33 @@
+2022-06-02 20:14:33,001 : INFO : log_help : Colums with missing values: ['floats']
+2022-06-02 20:14:33,001 : INFO : log_help : Colums with missing values: ['floats']
+2022-06-02 20:14:33,001 : INFO : log_help : Colums with missing values: ['floats']
+2022-06-02 20:14:33,007 : INFO : log_help : Converted to numbers
+2022-06-02 20:14:33,007 : INFO : log_help : Converted to numbers
+2022-06-02 20:14:33,007 : INFO : log_help : Converted to numbers
+2022-06-02 20:14:33,007 : INFO : log_help : Converted to numbers
+2022-06-02 20:14:33,008 : INFO : log_help : Showing coloumn names
+2022-06-02 20:14:33,008 : INFO : log_help : Showing coloumn names
+2022-06-02 20:14:33,008 : INFO : log_help : Showing coloumn names
+2022-06-02 20:14:33,008 : INFO : log_help : Showing coloumn names
+2022-06-02 20:14:33,008 : INFO : log_help : Showing coloumn names
+2022-06-02 20:14:33,111 : INFO : log_help : Dropped duplicates: Int64Index([], dtype='int64')
+2022-06-02 20:14:33,111 : INFO : log_help : Dropped duplicates: Int64Index([], dtype='int64')
+2022-06-02 20:14:33,111 : INFO : log_help : Dropped duplicates: Int64Index([], dtype='int64')
+2022-06-02 20:14:33,111 : INFO : log_help : Dropped duplicates: Int64Index([], dtype='int64')
+2022-06-02 20:14:33,111 : INFO : log_help : Dropped duplicates: Int64Index([], dtype='int64')
+2022-06-02 20:14:33,111 : INFO : log_help : Dropped duplicates: Int64Index([], dtype='int64')
+2022-06-02 20:14:33,116 : INFO : log_help : Showing data information
+2022-06-02 20:14:33,116 : INFO : log_help : Showing data information
+2022-06-02 20:14:33,116 : INFO : log_help : Showing data information
+2022-06-02 20:14:33,116 : INFO : log_help : Showing data information
+2022-06-02 20:14:33,116 : INFO : log_help : Showing data information
+2022-06-02 20:14:33,116 : INFO : log_help : Showing data information
+2022-06-02 20:14:33,116 : INFO : log_help : Showing data information
+2022-06-02 20:14:33,202 : INFO : log_help : Showing datatypes
+2022-06-02 20:14:33,202 : INFO : log_help : Showing datatypes
+2022-06-02 20:14:33,202 : INFO : log_help : Showing datatypes
+2022-06-02 20:14:33,202 : INFO : log_help : Showing datatypes
+2022-06-02 20:14:33,202 : INFO : log_help : Showing datatypes
+2022-06-02 20:14:33,202 : INFO : log_help : Showing datatypes
+2022-06-02 20:14:33,202 : INFO : log_help : Showing datatypes
+2022-06-02 20:14:33,202 : INFO : log_help : Showing datatypes
