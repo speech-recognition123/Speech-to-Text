@@ -50,6 +50,7 @@ feature_schema = FeatureSchema()
 @app.route('/predict', methods=['POST', 'GET'])
 def predict():
     #Filtering details from received json file and processing
+
     path = request.json['path']
     text = request.json['text']
     duration = request.json['duration']
@@ -68,7 +69,6 @@ def predict():
     # prediction = rnn_model.predict(file)
 
     return jsonify(file)
-
 
 
 if __name__ == '__main__':
