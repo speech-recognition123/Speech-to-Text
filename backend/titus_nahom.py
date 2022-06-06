@@ -20,7 +20,7 @@ def health():
     )
 
 
-@app.route("/predict", methods=["POST"])
+@app.route("/predict", methods=["POST", 'GET'])
 def predict():
     path = request.json['path']
     text = request.json['text']
@@ -36,8 +36,6 @@ def predict():
     rnn_model = load(open(rnn_model_path, "rb"))
     prediction = rnn_model.predict(file)
 
-    #Test server
-    return jsonify(file)
 
     return make_response(jsonify({"success": True, "data": prediction}), 200)
 
