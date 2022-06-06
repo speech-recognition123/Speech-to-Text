@@ -31,11 +31,14 @@ def predict():
             "text": text,
             "duration": duration}
 
-    file = request.files["file"]
     pwd = os.getcwd()
-    rnn_model_path = os.path.join(pwd, "model/RNN_model.pickle")
+    rnn_model_path = os.path.join(pwd, "../model/RNN_model.pickle")
     rnn_model = load(open(rnn_model_path, "rb"))
     prediction = rnn_model.predict(file)
+
+    #Test server
+    return jsonify(file)
+
     return make_response(jsonify({"success": True, "data": prediction}), 200)
 
 
