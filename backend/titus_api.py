@@ -61,8 +61,13 @@ def predict():
     file = {"path": path,
             "text": text,
             "duration": duration}
+    
+    # pwd = os.getcwd()
+    # rnn_model_path = os.path.join(pwd, "../model/RNN_model.pickle")
+    # rnn_model = load(open(rnn_model_path, "rb"))
+    # prediction = rnn_model.predict(file)
 
-    return jsonify({'message':'Succeed', 'text':text})
+    return jsonify(file)
 
 
 

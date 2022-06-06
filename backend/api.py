@@ -20,15 +20,23 @@ def health():
     )
 
 
-@app.route("/predict", methods=["POST"])
+@app.route("/predict", methods=["POST", "GET"])
 def predict():
-    file = request.files["file"]
+    path = request.json['path']
+    text = request.json['text']
+    duration = request.json['duration']
+
+
+    file = {"path": path,
+            "text": text,
+            "duration": duration}
+    # file = request.files["file"]
     pwd = os.getcwd()
-    rnn_model_path = os.path.join(pwd, "model/RNN_model.pickle")
+    rnn_model_path = os.path.join(pwd, "../model/RNN_model.pickle")
     rnn_model = load(open(rnn_model_path, "rb"))
     prediction = rnn_model.predict(file)
     return make_response(jsonify({"success": True, "data": prediction}), 200)
-
+    return jsonify(file)
 
 if __name__ == "__main__":
     app.run(host="localhost", port=5000, debug=True)
