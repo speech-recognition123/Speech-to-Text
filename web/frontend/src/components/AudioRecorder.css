@@ -1,0 +1,144 @@
+
+.container {
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    /* margin-top: 70px; */
+    padding-top: 20px; 
+    padding-left: 20px;
+    padding-bottom: 30px;
+    margin-left: 45px ;
+    margin-right: 45px;
+    border-radius:  10%;
+    background-color: rgb(207, 210, 211);
+
+  }
+  
+  /* .link {
+    display: flex;
+    margin-left: -20rem;
+  }
+  
+  .link span {
+    height: 30px;
+    width: 30px;
+    background-color: yellow;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .link span:hover {
+      filter: brightness(100%);
+      background-color: rgb(235, 235, 9);
+  }
+  
+  .link ul {
+    list-style-type: none;
+    background-color: tomato;
+    padding: 1rem;
+    height: 6.3rem;
+  }
+  
+  .link li {
+    margin-bottom: 14px;
+  }
+  
+  .link a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .link a:hover{
+      color: #000;
+      transition: 0.5s;
+  }
+  
+  .link ul:hover {
+    filter: brightness(110%);
+    transition: 0.5s;
+  }
+   */
+  .display {
+   margin-top: -2rem;
+  }
+  /* .upload {
+    margin-top: -3rem;
+  } */
+  .display main {
+     margin-left: -31rem;
+     position: inherit;
+  }
+  
+  .display button {
+    border: none;
+    padding: 1rem;
+    margin-right: 10px;
+    border-radius: 30%;
+    cursor: pointer;
+    width: 5rem;
+    background-color: rgb(150, 141, 140);
+    font-size: 1.3rem;
+    color: white;
+  }
+  
+  .display button:hover {
+    transform: translateY(2px);
+    transition: 0.5s;
+  }
+  
+  .display audio {
+    /* margin-left: -35rem; */
+    background-color: gray;
+    /* justify-content: center; */
+    position:relative;
+  }
+  
+  .display section {
+    background-color: rgba(255, 255, 0, 0.9);
+    font-family: "Cinzel", serif;
+    margin-top: 4rem;
+    margin-left: -47rem;
+    margin-right: 3rem;
+    /* max-width: 100rem; */
+    padding: 3rem;
+  }
+  
+  .upload div {
+    margin-top: 5rem;
+  }
+  
+  .upload button {
+    border: none;
+    padding: 1rem;
+    margin-right: 10px;
+    cursor: pointer;
+    width: 7rem;
+    background-color: tomato;
+    font-size: 1.3rem;
+    color: white;
+    border-radius: 3px;
+  }
+  
+  .upload input[type="file"] {
+    color: yellow;
+  }
+  
+  .upload button:hover {
+    transform: translateY(-2px);
+    transition: 0.5s;
+    filter: brightness(110%);
+  }
+  
+  .upload section {
+    background-color: rgba(189, 189, 19,0.9);
+    font-family: "Cinzel", serif;
+    margin-top: 4rem;
+    margin-left: -17rem;
+    max-width: 140%;
+    padding: 3rem;
+  }
+  
+  .upload div {
+    margin-right: 5rem ;
+  }
+  
