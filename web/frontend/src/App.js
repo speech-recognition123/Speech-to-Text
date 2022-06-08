@@ -50,7 +50,6 @@ recorder.stop(); //stop microphone access
 gumStream.getAudioTracks()[0].stop();
 
 recorder.exportWAV(onStop);
->>>>>>> 8aaaf1195cd8156a3b2a03057b723fc2b97c7f98
 }
 
 const onStop = (blob) => {
