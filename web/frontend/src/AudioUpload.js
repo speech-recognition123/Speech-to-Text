@@ -17,7 +17,7 @@ class FileUpload extends React.Component{
             selectedFile: event.target.files[0],
           })
     }
- 
+ // Connect here
     submit(){
         const data = new FormData() 
         data.append('file', this.state.selectedFile)
@@ -38,7 +38,7 @@ class FileUpload extends React.Component{
                     <div className="col-md-6 offset-md-3">
                         <br /><br />
  
-                            <h1 className="text-white">Speech to Text</h1>
+                            <h1 className="text-Black">Speech to Text</h1>
                             <br />
                             <div className="form-row">
                                 <div className="form-group col-md-6">
@@ -49,7 +49,7 @@ class FileUpload extends React.Component{
  
                             <div className="form-row">
                                 <div className="col-md-6">
-                                    <button type="submit" className="btn btn-dark" onClick={()=>this.submit()}>Save</button>
+                                    <button type="submit" className="btn btn-dark" onClick={()=>this.submit()}></button>
                                 </div>
                             </div>
                     </div>
