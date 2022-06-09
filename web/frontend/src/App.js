@@ -2,6 +2,7 @@ import './App.css';
 import React, { useState }  from 'react'
 import AudioUpload from './AudioUpload'
 import axios from 'axios';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 import "./App.css";
 
@@ -51,7 +52,7 @@ recorder.stop(); //stop microphone access
 gumStream.getAudioTracks()[0].stop();
 
 recorder.exportWAV(onStop);
-}
+};
 
 const onStop = (blob) => {
 console.log("uploading...");
@@ -70,11 +71,9 @@ axios.post('http://localhost:8080/asr/', data, config);
 return (
 
 <>
-    <div className="App">
+      <div className='App'>
       <AudioUpload />
-    </div>
 
-      <div className='app'>
         <button onClick={startRecording} type="button">Start</button>
         <button onClick={stopRecording} type="button">Stop</button>
       </div>

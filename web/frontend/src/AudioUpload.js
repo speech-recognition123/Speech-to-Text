@@ -38,11 +38,11 @@ class FileUpload extends React.Component{
                     <div className="col-md-6 offset-md-3">
                         <br /><br />
  
-                            <h3 className="text-white">Speech to Text</h3>
+                            <h1 className="text-white">Speech to Text</h1>
                             <br />
                             <div className="form-row">
                                 <div className="form-group col-md-6">
-                                    <label className="text-white">Select File :</label>
+                                    <label className="text-white">Select an Audio File :</label>
                                     <input type="file" className="form-control" name="upload_file" onChange={this.handleInputChange} />
                                 </div>
                             </div>
