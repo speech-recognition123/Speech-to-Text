@@ -95,12 +95,14 @@ def train(audio_gen,
         #     model, artifact_path='model', registered_model_name=model_name)
         plot_model(model, to_file=f'../images/{model_name}.png')
         mlflow.log_artifact(f"../images/{model_name}.png", "model archtecture")
-        
+        mlflow.log_params(hist.params)
+        for name, metric in hist.history.items():
+            mlflow.log_metric(name, metric[-1])
 
         # save model loss
         # with open('models/'+model_name+'.pickle', 'wb') as f:
         #     pickle.dump(hist.history, f)
-        print(hist)
+        print(hist.history)
 
 
 
