@@ -1,9 +1,11 @@
 import React from 'react';
+import '../App.css';
+import SpeechRecog from './SpeechRecog';
 
-export default function componentName() {
+export default function Home() {
   return (
     <>
-    Home Page
+    <SpeechRecog/>
     
     </>
   );
