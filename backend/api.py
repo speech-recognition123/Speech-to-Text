@@ -57,8 +57,6 @@ CORS(app)
 
 @app.route("/health", methods=["GET"])
 def health():
-    print(cnn_bi_rnn_model.summary())
-
     return make_response(
         jsonify(
             {
@@ -90,4 +88,4 @@ def predict_audio():
 
 
 if __name__ == "__main__":
-    app.run(host="localhost", port=5000, debug=True)
+    app.run(host="localhost", port=5000, debug=False)
