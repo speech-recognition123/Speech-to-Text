@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios';
+import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
  
 class FileUpload extends React.Component{
  
@@ -34,22 +35,23 @@ class FileUpload extends React.Component{
     render(){
         return(
             <div>
-                <div className="row">
-                    <div className="col-md-6 offset-md-3">
+                <div >
+                    <div >
                         <br /><br />
  
-                            <h1 className="text-Black">Speech to Text</h1>
+                            <h1 className="text-white">Here you can upload an audio file</h1>
                             <br />
                             <div className="form-row">
                                 <div className="form-group col-md-6">
                                     <label className="text-white">Select an Audio File :</label>
+                                    <pre/>
                                     <input type="file" className="form-control" name="upload_file" onChange={this.handleInputChange} />
                                 </div>
                             </div>
  
                             <div className="form-row">
                                 <div className="col-md-6">
-                                    <button type="submit" className="btn btn-dark" onClick={()=>this.submit()}></button>
+                                    <button type="submit" className="btn btn-dark" onClick={()=>this.submit()}>Transcribe</button>
                                 </div>
                             </div>
                     </div>

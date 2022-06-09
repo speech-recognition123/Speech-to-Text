@@ -20,7 +20,7 @@ return (
     <div className='app'>
       <div className='img'>
         <img src= {imgf}/>
-        </div>
+      </div>
       <div className='main'>
 
       <Routes>

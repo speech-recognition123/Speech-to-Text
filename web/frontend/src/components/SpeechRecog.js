@@ -1,12 +1,12 @@
 import React from 'react';
-import '../App.css';
-import { Button } from './Button';
+import { Button } from './Button.js';
 import './SpeechRecog.css';
+
 
 function SpeechRecog() {
   return (
-    <div className='hero-container'>
-      <video src='./images/photo_2022-06-09_10-32-07.jpg'/>
+    <div className='speech-container'>
+      <img src='/images/photo_2022-06-09_10-32-07.jpg'/>
       <h1>Speech Recognition</h1>
       <p>Do you want to Upload an audio or Record a voice?</p>
       <div className='hero-btns'>
