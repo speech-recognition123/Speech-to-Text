@@ -1,12 +1,10 @@
-import './App.css';
+//import './App.css';
 import React  from 'react'
 import AudioUpload from './components/AudioUpload'
 import AudioFileUploader from "./components/AudioRecorder";
 import Home from "./components/Home";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import imgf from './image/photo_2022-06-09_10-32-07.jpg'
-
-import "./App.css";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 

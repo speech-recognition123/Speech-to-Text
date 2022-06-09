@@ -5,7 +5,7 @@
     padding-top: 30px; 
     padding-left: 20px;
     padding-bottom: 30px;
-    color: #069AAE;
+    color: #fff;
 
     border-radius:  30%;
     background-color: #04032D;
@@ -15,7 +15,7 @@
   
   .display {
     position: relative;
-    color: #069AAE;
+    color: #fff;
   }
   
   .display button {
@@ -27,7 +27,7 @@
     border-radius: 30%;
     cursor: pointer;
     width: 5rem;
-    background-color: #069AAE;
+    background-color: #fff;
     font-size: 1.3rem;
     color: #04032D;
     justify-content: center;

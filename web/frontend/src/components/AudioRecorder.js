@@ -1,8 +1,8 @@
-
 import axios from "axios";
 
 import React, { useState } from "react";
 import "./AudioRecorder.css";
+import imgf from '../image/photo_2022-06-09_10-32-07.jpg'
 
 
 let gumStream = null;
@@ -72,6 +72,16 @@ const AudioRecorder = () => {
 
   return (
  <>
+
+      
+      <div className='app'>
+
+      <div className='img'>
+        <img src= {imgf}/>
+      </div>
+
+      <div className='main'>
+
     <div className='container'>
         <div className='display'>
             <div className='text-center'>
@@ -88,6 +98,8 @@ const AudioRecorder = () => {
                 <audio autoPlay controls></audio> 
       </div>
     </div>
+  </div>
+  </div>
        </>
   )
 };

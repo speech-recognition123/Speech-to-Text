@@ -1,18 +1,18 @@
-/* App.css
-* {
+App.css
+{
   margin: 0;
   padding: 0;
   box-sizing: border-box; 
   background-color: #04032D; 
-} */
+} 
 
-/* body {
+body {
   background-color: #04032D;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: white;
-} */
+}
 
-/* .app{
+.app{
   margin: 0;
   background-color: #04032D;
   height: 100vh;
@@ -22,9 +22,9 @@
   justify-content: center;
   position: relative
 
-} */
+}
 
-/* .img{
+.img{
   width: 400px;
   margin-left: -100px;
   height: 100px;
@@ -35,7 +35,4 @@
   width: 400px;
   height: 100px;
 
-} */
-
-
-
+}

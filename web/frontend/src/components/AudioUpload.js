@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import imgf from '../image/photo_2022-06-09_10-32-07.jpg'
  
 class FileUpload extends React.Component{
  
@@ -34,8 +35,13 @@ class FileUpload extends React.Component{
     }
     render(){
         return(
-            <div>
-                <div >
+
+
+            <div className='app'>
+            <div className='img'>
+                 <img src= {imgf}/>
+            </div>
+                <div   className='main'>
                     <div >
                         <br /><br />
  
@@ -43,7 +49,7 @@ class FileUpload extends React.Component{
                             <br />
                             <div className="form-row">
                                 <div className="form-group col-md-6">
-                                    <label className="text-white">Select an Audio File :</label>
+                                    <p className="text-white">Select an Audio File :</p>
                                     <pre/>
                                     <input type="file" className="form-control" name="upload_file" onChange={this.handleInputChange} />
                                 </div>
