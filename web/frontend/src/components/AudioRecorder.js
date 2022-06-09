@@ -10,6 +10,7 @@ const AudioRecorder = () => {
     const [recordState, setRecordState] = useState(null);
     const [audioBlob, setAudioBlob] = useState(null);
     const [transcription, setTranscription] = useState("");
+    const [loading, setLoading] = useState(false);
 
     const start = () => {
         setAudioBlob(null);
@@ -27,6 +28,7 @@ const AudioRecorder = () => {
     };
 
     const submit = () => {
+        setLoading(true);
         const data = new FormData();
         data.append("file", audioBlob["blob"]);
         let url = "http://localhost:5000/predict";
@@ -35,6 +37,8 @@ const AudioRecorder = () => {
             const { data } = res;
 
             setTranscription(data.data);
+
+            setLoading(false);
         });
     };
 
@@ -89,7 +93,14 @@ const AudioRecorder = () => {
                                             className="btn btn-dark"
                                             onClick={() => submit()}
                                         >
-                                            Transcribe
+                                            {loading ? (
+                                                <div
+                                                    className="spinner-border"
+                                                    role="status"
+                                                ></div>
+                                            ) : (
+                                                <span>Transcribe</span>
+                                            )}
                                         </button>
                                     </div>
                                 </div>
@@ -98,7 +109,7 @@ const AudioRecorder = () => {
                             {!!transcription && (
                                 <div className="mt-4">
                                     <hr />
-                                    <p>Transcription here...</p>
+                                    <p>{transcription}</p>
                                 </div>
                             )}
                         </div>

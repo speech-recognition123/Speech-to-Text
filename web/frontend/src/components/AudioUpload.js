@@ -11,6 +11,7 @@ class FileUpload extends React.Component {
         this.state = {
             selectedFile: null,
             transcription: "",
+            loading: false,
         };
 
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -23,6 +24,9 @@ class FileUpload extends React.Component {
     }
     // Connect here
     submit() {
+        this.setState({
+            loading: true,
+        });
         const data = new FormData();
         data.append("file", this.state.selectedFile);
         console.warn(this.state.selectedFile);
@@ -33,6 +37,10 @@ class FileUpload extends React.Component {
 
             this.setState({
                 transcription: data.data,
+            });
+
+            this.setState({
+                loading: false,
             });
         });
     }
@@ -82,15 +90,23 @@ class FileUpload extends React.Component {
                                     type="submit"
                                     className="btn btn-dark"
                                     onClick={() => this.submit()}
+                                    disabled={!this.state.selectedFile}
                                 >
-                                    Transcribe
+                                    {this.state.loading ? (
+                                        <div
+                                            className="spinner-border"
+                                            role="status"
+                                        ></div>
+                                    ) : (
+                                        <span>Transcribe</span>
+                                    )}
                                 </button>
                             </div>
                         </div>
 
                         <div className="mt-4">
                             <hr />
-                            <p>Transcription here...</p>
+                            <p>{this.state.transcription}</p>
                         </div>
                     </div>
                 </div>
