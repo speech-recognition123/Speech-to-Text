@@ -5,9 +5,10 @@ App.css
   box-sizing: border-box;
 }
 body {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-image: url(./image/photo_2022-06-09_10-32-07.jpg);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: white;
+
 }
 
 .app{
