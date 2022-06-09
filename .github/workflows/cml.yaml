@@ -1,32 +1,19 @@
 name: model-pipeline
-on:
-  push:
-    branches:
-      - main
+on: [push]
 jobs:
   run:
     runs-on: ubuntu-latest
-    # optionally use a convenient Ubuntu LTS + DVC + CML image
-    # container: docker://ghcr.io/iterative/cml:0-dvc2-base1
     steps:
       - uses: actions/checkout@v2
-      # may need to setup NodeJS & Python3 on e.g. self-hosted
-      # - uses: actions/setup-node@v2
-      #   with:
-      #     node-version: '16'
-      # - uses: actions/setup-python@v2
-      #   with:
-      #     python-version: '3.x'
+      - uses: actions/setup-python@v2
       - uses: iterative/setup-cml@v1
-      - name: Train model
-        run: |
-          # Your ML workflow goes here
-          sudo pip install -r requirements.txt
-          sudo python train.py
-      - name: Write CML report
+      - name: Metrics
+
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          # Post reports as comments in GitHub PRs
-          cat results.txt >> report.md
+        run: |     
+          echo "# pipeline" > report.md
+          cml publish ./images/Speech-to-Text-Architecture.JPG --md >> report.md
+          echo "## Model Architecture" >> report.md
+          cml publish ./images/RNN_model.png --md >> report.md
           cml send-comment report.md
