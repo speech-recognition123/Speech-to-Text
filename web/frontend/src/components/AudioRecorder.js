@@ -10,8 +10,7 @@ let recorder = null;
 let audioContext = null;
 
 const AudioRecorder = () => {
-  // const [show, setShow] = useState(false);
-  // const [view, setView] = useState(true);
+  
 
   const startRecording = () => {
     let constraints = {
@@ -88,12 +87,10 @@ const AudioRecorder = () => {
 
   return (
  <>
-      <div className='container'>
-
-            <div className='display'>
-              <div>
-                <div>
-                  <h2>Record Audio</h2>
+    <div className='container'>
+        <div className='display'>
+            <div>
+                <h2>Record Audio</h2>
                   <button onClick={startRecording} type="button">
                     Start
                   </button>
@@ -103,11 +100,9 @@ const AudioRecorder = () => {
                 </div>
                 <br></br>
                 <br></br>
-                <audio autoPlay controls></audio>
-              </div>
-              
-            </div>
+                <audio autoPlay controls></audio> 
       </div>
+    </div>
        </>
   )
 };

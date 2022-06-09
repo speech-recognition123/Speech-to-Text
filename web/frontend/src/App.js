@@ -74,12 +74,7 @@ return (
     <div className="App">
       <AudioUpload />
       <AudioFileUploader/>
-    {/* </div>
-
-      <div className='app'>
-        <button onClick={startRecording} type="button">Start</button>
-        <button onClick={stopRecording} type="button">Stop</button>
-      </div> */}
+    </div>
 
     </>
   );
