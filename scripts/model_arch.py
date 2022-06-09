@@ -5,12 +5,14 @@ from keras.layers import (BatchNormalization, Conv1D, Dense, Input,
     TimeDistributed, Activation, Bidirectional, SimpleRNN, GRU, LSTM)
 from keras.utils.vis_utils import plot_model
 
-from keras.optimizers import gradient_descent_v2
+from keras.optimizers import SGD
 from keras.layers import (Input, Lambda)
 
 from keras.callbacks import ModelCheckpoint   
 import os
 import pickle
+import mlflow
+
 
 def model_1(input_dim, units, activation, output_dim=29):
     """ Build a recurrent network for speech 
@@ -30,7 +32,7 @@ def model_1(input_dim, units, activation, output_dim=29):
     model = Model(inputs=input_data, outputs=y_pred)
     model.output_length = lambda x: x
     print(model.summary())
-    plot_model(model, to_file='../images/model_1.png')
+    
     return model
 
 
@@ -57,9 +59,11 @@ def train(audio_gen,
           input_to_softmax, 
           model_name,
           minibatch_size=20,
-          optimizer=gradient_descent_v2.SGD(learning_rate=0.02, decay=1e-6, momentum=0.9, nesterov=True, clipnorm=5),
+          optimizer=SGD(learning_rate=0.02, decay=1e-6, momentum=0.9, nesterov=True, clipnorm=5),
           epochs=20,
-          verbose=1):    
+          verbose=1,
+          experiment_name='stt-cnn',
+          run_name='default-params'):    
     # calculate steps_per_epoch
     num_train_examples=len(audio_gen.train_audio_paths)
     steps_per_epoch = num_train_examples//minibatch_size
@@ -79,15 +83,24 @@ def train(audio_gen,
 
     # add checkpointer
     checkpointer = ModelCheckpoint(filepath='../models/'+model_name+'.h5', verbose=0)
+    mlflow.set_experiment(experiment_name)
+    mlflow.set_tracking_uri('http://localhost:5000')
+    with mlflow.start_run(run_name=run_name):
+        
+        
+        hist = model.fit_generator(generator=audio_gen.next_train(), steps_per_epoch=steps_per_epoch,
+            epochs=epochs, validation_data=audio_gen.next_valid(), validation_steps=validation_steps,
+            callbacks=[checkpointer], verbose=verbose, use_multiprocessing=True)
+        # mlflow.tensorflow.log_model(
+        #     model, artifact_path='model', registered_model_name=model_name)
+        plot_model(model, to_file=f'../images/{model_name}.png')
+        mlflow.log_artifact(f"../images/{model_name}.png", "model archtecture")
+        
 
-    # train the model
-    hist = model.fit_generator(generator=audio_gen.next_train(), steps_per_epoch=steps_per_epoch,
-        epochs=epochs, validation_data=audio_gen.next_valid(), validation_steps=validation_steps,
-        callbacks=[checkpointer], verbose=verbose, use_multiprocessing=True)
-
-    # save model loss
-    with open('models/'+model_name+'.pickle', 'wb') as f:
-        pickle.dump(hist.history, f)
+        # save model loss
+        # with open('models/'+model_name+'.pickle', 'wb') as f:
+        #     pickle.dump(hist.history, f)
+        print(hist)
 
 
 
