@@ -3,6 +3,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import "./AudioRecorder.css";
 import imgf from '../image/photo_2022-06-09_10-32-07.jpg'
+import './component.css';
 
 
 let gumStream = null;

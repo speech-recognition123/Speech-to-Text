@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import imgf from '../image/photo_2022-06-09_10-32-07.jpg'
+import './component.css';
  
 class FileUpload extends React.Component{
  
