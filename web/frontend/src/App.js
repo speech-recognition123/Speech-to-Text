@@ -4,6 +4,7 @@ import AudioUpload from './components/AudioUpload'
 import AudioFileUploader from "./components/AudioRecorder";
 import Home from "./components/Home";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import imgf from './image/photo_2022-06-09_10-32-07.jpg'
 
 import "./App.css";
 
@@ -16,30 +17,27 @@ function App() {
 return (
 
   <BrowserRouter>
-    <div className='App'>
-    <Routes>
-   
-          <Route path ='/' element = {<Home/>}/>
-      
-        </Routes>
+    <div className='app'>
+      <div className='img'>
+        <img src= {imgf}/>
+        </div>
+      <div className='main'>
 
       <Routes>
-      <Route path ='/audio-uploader' element = {<AudioUpload/>}/>
-        </Routes>
-        
-        <Routes>
-      <Route path ='/audio-recorder' element = {<AudioFileUploader/>}/>
+                <Route path ='/' element = {<Home/>}/>     
+                <Route path ='/audio-uploader' element = {<AudioUpload/>}/>
+                <Route path ='/audio-recorder' element = {<AudioFileUploader/>}/>
+               
+      </Routes>
+    </div>
 
-        </Routes>
         {/* <AudioUpload />
 
         <AudioFileUploader/> */}
-   
     </div>
   </BrowserRouter>
    
   );
 };
-
 
 export default App;

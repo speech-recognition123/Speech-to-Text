@@ -2,56 +2,37 @@ App.css
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; 
+  background-color: #04032D; 
 }
+
 body {
-  background-image: url(./image/photo_2022-06-09_10-32-07.jpg);
+  background-color: #04032D;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: white;
-
 }
 
 .app{
-  width: 100vw;
-  height: 100vw;
+  margin: 0;
+  background-color: #04032D;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   position: relative
 
 }
-.button{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-}
-button{
-  font-family: 'Lobster', cursive;
-  font-weight: 600;
-  font-size: size 40px;
-  margin: 0px, 4px;
-  padding: 32px;
-  color: rgb(214,214,214);
-  background-color: rgb(94,94,94);
-  border: 2px solid #fff;
-  border-radius:30;
-}
-  .p-transcript{
-    margin: 20px;
-    padding: 20px;
-    background-color: rgb(41,40,48)
-  }
-.p-mic{
-  position: absolute;
-  top:0;
-  left: 0;
-  margin: 20px;
-  padding:20px;
-  border-radius: 20px;
-  color:#fff;
-  background-color: rgb(41,40,40)
 
+.img{
+  width: 400px;
+  margin-left: -100px;
 }
+
+.img img{
+  display: flex;
+  width: 400px;
+}
+
+
 

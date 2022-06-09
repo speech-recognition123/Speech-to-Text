@@ -69,27 +69,12 @@ const AudioRecorder = () => {
     axios.post("http://localhost:8080/asr/", data, config);
   };
 
-  // const [file, setFile] = useState();
-
-  // function handleChange(event) {
-  //   setFile(event.target.files[0]);
-  // }
-
-  // function handleSubmit(event) {
-  //   event.preventDefault();
-  //   //const url = "http://localhost:3000/uploadFile";
-  //   const formData = new FormData();
-  //   formData.append("file", file);
-  //   formData.append("fileName", file.name);
-  //   console.log(file.name);
-
-  // }
 
   return (
  <>
     <div className='container'>
         <div className='display'>
-            <div>
+            <div className='text-center'>
                 <h2>Record Audio</h2>
                   <button onClick={startRecording} type="button">
                     Start
