@@ -8,16 +8,6 @@
 </div>
 </br>
 
-## Presentation Slide
-
-- [Speech to Text: Not Completed]
-
-## Data visualization link
-- [visualization link: Not Completed]
-
-## Articles
-- [Medium Article:Not Completed]
-
 ## Table of Contents
 
 * [African language Speech Recognition](#African-language-Speech-Recognition)
@@ -42,11 +32,30 @@
 
 <p>Our responsibility was to build a deep learning model that is capable of transcribing a speech to text in the Amharic language. The model we produce will be accurate and is robust against background noise.</p>
 
+## Installation guide
+### Conda Enviroment
+```bash
+conda create --name mlenv python==3.7.5
+conda activate mlenv
+```
+
+### Installation of dependencies
+```bash
+git clone https://github.com/week4-SpeechRecognition/Speech-to-Text.git
+cd Speech-to-Text
+sudo python3 setup.py install
+```
+
+### Docker run backend api
+```bash
+docker pull abelblue/api:1.0
+git checkout -b backend
+docker run abelblue/api:1.0
+```
 
 ## architecture
 
 ![speech-to-text deep learning architecture](images/Speech-to-Text-Architecture.JPG)
-
 
 ## Project Structure
 
@@ -54,18 +63,12 @@
 
 - `images/` the folder where all snapshot for the project are stored.
 
-### [logs](logs):
-
-- `logs/` the folder where script logs are stored.
-
-### [mlruns](mlruns):
-- `mlruns/0/` the folder that contain auto generated mlflow runs.
 ### [data](data):
 
- - `not yet.dvc` the folder where the dataset versioned csv files are stored.
+ - `*.dvc` the folder where the dataset versioned files are stored.
 
 ### [.dvc](.dvc):
-- `.dvc/`: the folder where dvc is configured for data version control.
+- `.dvc/`: the folder where dvc configured for data version control.
 
 ### [.github](.github):
 
@@ -74,36 +77,30 @@
 ### [.vscode](.vscode):
 
 - `.vscode/`: the folder where local path fix are stored.
+
 ### [models](models):
-- `not yet.pkl`: the folder where model pickle files are stored.
+
+- `models/` the folder where model pickle files are stored.
 
 ### [notebooks](notebooks):
 
-- `not yet.ipynb`: description will be added.
-- `not yet.ipynb`: description will be added.
-
+- `notebooks/`: include all notebooks for deep-learning and meta-data.
 
 ###  [scripts](scripts):
 
-- ` not yet.py`: description will be added.
+- `*.py`: Scripts for modularization, logging, and packaging.
 
-### [tests](tests):
-
-- `tests/`: the folder containing unit tests for the scripts.
-
-### [sql](sql):
-
-- `sql/`: the folder containing database table and mysql-python manipulator script.
 ### root folder
 
 - `requirements.txt`: a text file lsiting the projet's dependancies.
 - `README.md`: Markdown text with a brief explanation of the project and the repository structure.
 - `Dockerfile`: build users can create an automated build that executes several command-line instructions in a container.
 
-## Installation guide
+## Contributors
 
-```bash
+<!-- Copy-paste in your Readme.md file -->
+<a href = "https://github.com/week4-SpeechRecognition/Speech-to-Text/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo = week4-SpeechRecognition/Speech-to-Text"/>
+</a>
 
-not yet
-```
-
+Made with [contributors-img](https://contrib.rocks).
