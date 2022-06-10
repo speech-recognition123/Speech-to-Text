@@ -25,7 +25,7 @@
   - [Installation guide](#installation-guide)
 
 ## Introduction
-<p>Speech is the most natural communication mode for human beings. The task of speech recognition is to convert speech into a sequence of words by a computer program. Speech recognition applications enable people to use speech as another input mode to interact with applications with ease and effectively. Speech recognition interfaces in native language will enable the illiterate/semi-literate people to use the technology to greater extent without the knowledge of operating with computer keyboard or stylus. For more than three decades, a great amount of research was carried out on various aspects of speech recognition and its applications. Today many products have been developed that successfully utilize automatic speech recognition for communication between human and machines. Performance of speech recognition applications deteriorates in the presence of reverberation and even low levels of ambient noise. Robustness to noise, reverberation and characteristics of the transducer is still an unsolved problem that makes the research in the area of speech recognition still very active.</p>
+
 <p> Speech recognition technology allows for hands-free control of smartphones, speakers, and even vehicles in a wide variety of languages. Companies have moved towards the goal of enabling machines to understand and respond to more and more of our verbalized commands. There are many matured speech recognition systems available, such as Google Assistant, Amazon Alexa, and Apple’s Siri. However, all of those voice assistants work for limited languages only. </p>
 
 <p>The World Food Program wants to deploy an intelligent form that collects nutritional information of food bought and sold at markets in two different countries in Africa - Ethiopia and Kenya. The design of this intelligent form requires selected people to install an app on their mobile phone, and whenever they buy food, they use their voice to activate the app to register the list of items they just bought in their own language. The intelligent systems in the app are expected to live to transcribe the speech-to-text and organize the information in an easy-to-process way in a database. </p>
@@ -46,14 +46,7 @@ cd Speech-to-Text
 sudo python3 setup.py install
 ```
 
-### Docker run backend api
-```bash
-docker pull abelblue/api:1.0
-git checkout -b backend
-docker run abelblue/api:1.0
-```
-
-## architecture
+## Architecture
 
 ![speech-to-text deep learning architecture](images/Speech-to-Text-Architecture.JPG)
 
@@ -84,13 +77,13 @@ docker run abelblue/api:1.0
 
 ### [notebooks](notebooks):
 
-- `notebooks/`: include all notebooks for deep-learning and meta-data.
+- `notebooks/` include all notebooks for deep-learning and meta-data.
 
 ###  [scripts](scripts):
 
 - `*.py`: Scripts for modularization, logging, and packaging.
 
-### root folder
+### root folder:
 
 - `requirements.txt`: a text file lsiting the projet's dependancies.
 - `README.md`: Markdown text with a brief explanation of the project and the repository structure.
@@ -99,8 +92,6 @@ docker run abelblue/api:1.0
 ## Contributors
 
 <!-- Copy-paste in your Readme.md file -->
-<a href = "https://github.com/week4-SpeechRecognition/Speech-to-Text/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo = week4-SpeechRecognition/Speech-to-Text"/>
-</a>
+![contributors list](https://contrib.rocks/image?repo=week4-SpeechRecognition/Speech-to-Text)
 
-Made with [contributors-img](https://contrib.rocks).
+Made with [contrib.rocks](https://contrib.rocks)
