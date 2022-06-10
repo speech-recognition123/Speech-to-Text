@@ -22,7 +22,7 @@ jobs:
         run: |
           # Your ML workflow goes here
           sudo pip install -r requirements.txt
-          sudo python train.py
+          # sudo python train.py
       - name: Write CML report
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
